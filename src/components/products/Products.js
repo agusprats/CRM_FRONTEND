@@ -23,7 +23,7 @@ function Products() {
 
     return (
         <Fragment>
-            <h2>Products</h2>
+            <h2>PRODUCTS</h2>
             <Link to={'/products/new'} className="btn btn-verde nvo-cliente"> <i className="fas fa-plus-circle"></i>
                 New Producto
             </Link>

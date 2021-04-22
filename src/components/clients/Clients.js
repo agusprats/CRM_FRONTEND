@@ -22,7 +22,7 @@ if(!clients.length) return <Spinner/>
 
     return (
         <Fragment>
-            <h2>Clientes</h2>
+            <h2>CLIENTS</h2>
 
             <Link to={"/clients/new"} className="btn btn-verde nvo-cliente"> <i className="fas fa-plus-circle"></i>
                 New Client

@@ -37,8 +37,8 @@ function Product({product}) {
         <Fragment>
             <li className="producto">
                     <div className="info-producto">
-                        <p className="nombre">Product {name}</p>
-                        <p className="precio">$ {cost}</p>
+                        <p className="nombre">{name}</p>
+                        <p className="precio" style={{fontSize: "18px"}}>USD {cost}</p>
                     { image? (
                     <img src={`http://localhost:4001/${image}`} alt="car"/>
                     ) : null}                   

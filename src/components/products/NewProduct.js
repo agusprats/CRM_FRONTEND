@@ -58,10 +58,10 @@ function NewProduct(props) {
 
     return (
         <Fragment>
-            <h2>New Product</h2>
+            <h2>NEW PRODUCT</h2>
             <form
             onSubmit={addProduct}>
-                <legend>Complete all the Fields</legend>
+                <legend style={{textalign: "center"}}>Complete the Fields</legend>
 
                 <div className="campo">
                     <label>Name:</label>

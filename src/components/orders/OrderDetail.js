@@ -11,7 +11,7 @@ function OrderDetail({order}) {
                 <p className="nombre">Client: {client.lastname}, {client.name}  </p>
 
                 <div className="articulos-pedido">
-                    <p className="productos">Product ordered: </p>
+                    <p className="productos">Products Ordered: </p>
                     <ul>
                         {order.order.map(articulos => (
                             <li key={order._id+articulos.product._id}>

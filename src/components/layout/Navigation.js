@@ -6,7 +6,7 @@ function Navigation() {
     return (
         
         <aside className="sidebar col-3">
-            <h2>ADMIN</h2>
+            <h2>ADMIN MENU</h2>
 
             <nav className="navegacion">
                 <Link to="/" className="clientes">CLIENTS</Link>

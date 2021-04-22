@@ -48,6 +48,7 @@ a {
 /** GLOBALES **/
 h1{
     font-family: Lato var(--fontHeading);
+    text-align: center;
 }
 h2 {
     font-family: var(--fontTexto);
@@ -83,6 +84,9 @@ h2 {
 }
 .btn:hover {
     cursor: pointer;
+    transform: scale(1.03);
+    transition-duration: 1s;
+    transition-timing-function: ease-out;
 }
 @media (min-width: 768px) {
     .btn {
@@ -124,6 +128,13 @@ h2 {
 img{
     width: 350px;
     height:200px;
+}
+
+img:hover {
+    cursor: pointer;
+    transform: scale(1.03);
+    transition-duration: 1s;
+    transition-timing-function: ease-out;
 }
 /** GRID **/
 @media (min-width: 768px) {
@@ -322,6 +333,9 @@ img{
 .articulos-pedido {
     padding: 2rem;
     background-color: #f1f1f1;
+    border-radius: 10px !important;
+    border: 1px solid grey !important;
+    box-shadow: 0 3px 8px 0 grey;
 }
 .pedido ul  {
     list-style: none;
