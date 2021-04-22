@@ -17,6 +17,7 @@ import UpdateProduct from './components/products/UpdateProduct';
 
 
 import Orders from './components/orders/Orders';
+import NewOrder from './components/orders/NewOrder';
 
 function App() {
   return (
@@ -34,8 +35,8 @@ function App() {
             <Route exact path="/products" component={Products}/>
             <Route exact path="/products/new" component={NewProduct}/>
             <Route exact path="/products/update/:id" component={UpdateProduct}/>
-            
             <Route exact path="/orders" component={Orders}/>
+            <Route exact path="/orders/new/:id" component={NewOrder}/>
           </Switch>
           </main>
         </div>

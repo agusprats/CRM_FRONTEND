@@ -37,7 +37,7 @@ function Product({product}) {
         <Fragment>
             <li className="producto">
                     <div className="info-producto">
-                        <p className="nombre">Producto {name}</p>
+                        <p className="nombre">Product {name}</p>
                         <p className="precio">$ {cost}</p>
                     { image? (
                     <img src={`http://localhost:4001/${image}`} alt="car"/>
@@ -62,4 +62,4 @@ function Product({product}) {
     )
 }
 
-export default Product
+export default Product;

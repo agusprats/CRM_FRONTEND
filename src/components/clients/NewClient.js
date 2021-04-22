@@ -57,12 +57,12 @@ const validateClient = () => {
             <h2>New Client</h2>
             <form
             onSubmit={handleSubmit}>
-                <legend>Fill all the fields</legend>
+                <legend>Complete the fields</legend>
                 <div className="campo">
-                    <label>Lastname:</label>
+                    <label>Last name:</label>
                     <input 
                     type="text" 
-                    placeholder="Client Lastname" 
+                    placeholder="Client Last name" 
                     name="lastname"
                     onChange={updateState}/>
                 </div>

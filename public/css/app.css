@@ -10,7 +10,6 @@
     */ 
 
 
-
     --rojo : #A01C48;
     --naranja : #F58549;
     --amarillo: #ECA400;
@@ -25,6 +24,13 @@ body {
     background-color: var(--grisClaro);
     font-size: 1.6rem;
     font-family: var(--fontTexto);
+}
+img{
+    width: 100%;
+    height:auto;
+    border-radius: 10px !important;
+    border: 1px solid grey !important;
+    box-shadow: 0 3px 8px 0 grey;
 }
 html {
     
@@ -71,6 +77,9 @@ h2 {
     border: none;
     flex: 0 0 100%;
     width: 100%;
+    border-radius: 10px !important;
+    border: 1px solid grey !important;
+    box-shadow: 0 3px 8px 0 grey;
 }
 .btn:hover {
     cursor: pointer;
@@ -86,7 +95,7 @@ h2 {
     margin-right: 1rem;
 }
 .btn-azul {
-    background-color: var(--azul);
+    background-color: var(--grisOscuro);
 }
 .btn-rojo {
     background-color: var(--rojo);
@@ -95,7 +104,7 @@ h2 {
     background-color: var(--naranja);
 }
 .btn-amarillo {
-    background-color: var(--amarillo);
+    background-color: var(--gris);
 }
 .btn-verde {
     background-color: var(--grisOscuro);
@@ -111,6 +120,10 @@ h2 {
     margin-top: 1rem;
     font-family: "Font Awesome 5 Free", Arial, Helvetica, sans-serif; 
     font-weight: 900; 
+}
+img{
+    width: 350px;
+    height:200px;
 }
 /** GRID **/
 @media (min-width: 768px) {
@@ -283,6 +296,7 @@ h2 {
 .producto p,
 .pedido p {
     margin: 2rem 0;
+    font-size: 1.4rem;
 }
 .cliente .nombre,
 .producto .nombre,
@@ -458,6 +472,8 @@ h3.resumen-titulo {
 .login h2 {
     text-align: center;
 }
+
+
 .login .contenedor-formulario {
 
 }

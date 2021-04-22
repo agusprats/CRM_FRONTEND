@@ -43,9 +43,13 @@ function Client({client}) {
             <p>CLIENT ID: {_id}</p>
         </div>
         <div className="acciones">
-            <Link to={`/clients/update/${_id}`} className="btn btn-azul">
+            <Link to={`/clients/update/${_id}`} className="btn btn-verde">
                 <i className="fas fa-pen-alt"></i>
                 Update Client
+            </Link>
+            <Link to={`/orders/new/${_id}`} className="btn btn-amarillo">
+                <i className="fas fa-plus"></i>
+                New Order
             </Link>
             <button 
             type="button" 
