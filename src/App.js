@@ -1,4 +1,4 @@
-import React,{Fragment} from 'react';
+import React,{Fragment, useContext} from 'react';
 import {BrowserRouter as Router, Route, Switch} from 'react-router-dom';
 
 /*Layouts*/
@@ -19,10 +19,20 @@ import UpdateProduct from './components/products/UpdateProduct';
 import Orders from './components/orders/Orders';
 import NewOrder from './components/orders/NewOrder';
 
+import Login from './components/auth/Login';
+
+import {CRMContext, CRMProvider} from './context/CRMContext'
+
 function App() {
+
+  const [auth, guardarAuth] = useContext(CRMContext);
+
+  console.log(process.env.REACT_APP_BACKEND_URL);
+
   return (
-    <Router>
-      <Fragment>
+  <Router>
+    <Fragment>
+      <CRMProvider value={[auth, guardarAuth]}>
         <Header/>
 
         <div className="grid contenedor contenido-principal">
@@ -37,9 +47,11 @@ function App() {
             <Route exact path="/products/update/:id" component={UpdateProduct}/>
             <Route exact path="/orders" component={Orders}/>
             <Route exact path="/orders/new/:id" component={NewOrder}/>
+            <Route exact path="/session" component={Login}/>
           </Switch>
           </main>
         </div>
+        </CRMProvider>
       </Fragment>
     </Router>
   )

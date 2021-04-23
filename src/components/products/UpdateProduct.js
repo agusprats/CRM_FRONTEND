@@ -119,7 +119,7 @@ function UpdateProduct(props) {
                 <div className="campo">
                     <label>Image:</label>
                     { image ? (
-                        <img src={`http://localhost:4001/${image}`} alt="cars" width="280"/>
+                        <img src={`${process.env.REACT_APP_BACKEND_URL}/${image}`} alt="cars" width="280"/>
                     ) : null }</div>
                     <div className="campo">
                     <input 

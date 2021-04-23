@@ -1,22 +1,40 @@
-import React, {useEffect, useState, Fragment} from 'react';
+import React, {useEffect, useState, Fragment, useContext} from 'react';
 import axiosClient from '../../config/axios';
-import {Link} from 'react-router-dom';
+import {Link, withRouter} from 'react-router-dom';
 import Spinner from '../layout/Spinner';
 import Client from './Client';
+import {CRMContext} from '../../context/CRMContext';
 
-export default function Clients() {
+function Clients(props) {
 
 const [clients, setClients] = useState([]);
 
-    const queryApi = async () => {
-        const queryClients = await axiosClient.get('/api/clients/client');
-        setClients(queryClients.data)
-        console.log(queryClients)
-}
+const [auth, guardarAuth] = useContext(CRMContext);
 
 useEffect(() => {
+    if(auth.token !== ''){
+    const queryApi = async () => {
+        try{
+            const queryClients = await axiosClient.get('/api/clients/client', {
+                headers: {Authorization: `Bearer ${auth.token}`}
+            });
+            setClients(queryClients.data)
+
+        }catch(error){
+        //error authorization
+        if(error.response.status = 500){
+            props.history.push('/session')
+            }
+        }
+    }
     queryApi();
-},[]);
+    }else{
+        props.history.push('/session')
+    }},[]);
+
+if(!auth.auth){
+    props.history.push('/session')
+}
 
 if(!clients.length) return <Spinner/>
 
@@ -38,3 +56,5 @@ if(!clients.length) return <Spinner/>
         </Fragment>
     )
 }
+export default withRouter(Clients);
+

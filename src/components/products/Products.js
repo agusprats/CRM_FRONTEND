@@ -1,22 +1,38 @@
-import React, {useEffect, useState, Fragment}  from 'react';
+import React, {useEffect, useState, Fragment, useContext}  from 'react';
 import axiosClient from '../../config/axios';
-import {Link} from 'react-router-dom';
+import {Link, withRouter} from 'react-router-dom';
 import Product from './Product';
 import Spinner from '../layout/Spinner';
+import {CRMContext} from '../../context/CRMContext';
 
-function Products() {
+function Products(props) {
 
     const [products, setProducts] = useState([]);
-
-    const queryAPI = async () => {
-        const queryProducts = await axiosClient.get('/api/products/product');
-        setProducts(queryProducts.data)
-            console.log(queryProducts)
-    }
+    const [auth, guardarAuth] = useContext(CRMContext);
 
     useEffect(() => {
+        if(auth.token !== ''){
+        const queryAPI = async () => {
+            try{
+                const queryProducts = await axiosClient.get('/api/products/product', {
+                    headers: {Authorization: `Bearer ${auth.token}`}
+                    });
+                    setProducts(queryProducts.data)
+            }catch(error){
+                //error authorization
+                if(error.response.status = 500){
+                    props.history.push('/session')
+                    }
+                }
+        }
         queryAPI();
-    },[]);
+                }else{
+                props.history.push('/session')
+    }},[]);
+
+    if(!auth.auth){
+        props.history.push('/session')
+    }
 
 
     if(!products.length) return <Spinner/>
@@ -39,4 +55,4 @@ function Products() {
     )
 }
 
-export default Products
+export default withRouter(Products)

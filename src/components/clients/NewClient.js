@@ -1,11 +1,13 @@
-import React, {useState, Fragment} from 'react';
+import React, {useState, Fragment, useContext} from 'react';
 import {withRouter} from 'react-router-dom';
 import axiosClient from '../../config/axios';
 import Swal from 'sweetalert2';
+import {CRMContext} from '../../context/CRMContext';
 
 function NewClient({history}) {
+    const [auth, guardarAuth] = useContext(CRMContext);
 
-const[client, setClient] = useState({
+    const[client, setClient] = useState({
     lastname: '',
     name:'',
     company:'',
@@ -50,6 +52,10 @@ const validateClient = () => {
     const{ lastname, name, company, mail, phone} = client;
     let valid = !lastname.length || !name.length || !company.length || !mail.length || !phone.length;
     return valid;
+}
+
+if(!auth.auth && (localStorage.getItem('token') === auth.token)){
+    history.push('/session')
 }
 
     return (

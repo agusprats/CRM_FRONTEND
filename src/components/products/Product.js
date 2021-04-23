@@ -40,7 +40,7 @@ function Product({product}) {
                         <p className="nombre">{name}</p>
                         <p className="precio" style={{fontSize: "18px"}}>USD {cost}</p>
                     { image? (
-                    <img src={`http://localhost:4001/${image}`} alt="car"/>
+                    <img src={`${process.env.REACT_APP_BACKEND_URL}/${image}`} alt="car"/>
                     ) : null}                   
                     </div>
                     <div className="acciones">

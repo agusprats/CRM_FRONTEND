@@ -155,6 +155,10 @@ img:hover {
     background: linear-gradient(to bottom, #d7d2cc, #304352); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
     ;
     padding: 2rem 0;
+    border: 1px solid grey !important;
+    box-shadow: 0 3px 8px 0 grey;
+    position: sticky !important;
+    z-index: 1;
 }
 .barra h1 {
     margin:0;
@@ -488,6 +492,11 @@ h3.resumen-titulo {
 }
 
 
-.login .contenedor-formulario {
-
+.login  {
+    background:  #304352;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to bottom, #fff9f3,#58738a);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to bottom, #faf5ee, #2f4c63); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    border-radius: 10px !important;
+    border: 1px solid grey !important;
+    box-shadow: 0 3px 8px 0 grey;
 }
